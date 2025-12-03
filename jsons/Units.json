@@ -1,0 +1,39 @@
+[
+
+	{
+		"name": "fire",
+		"unitType": "elemental",
+		// "uniqueTo": "Barbarians",
+		"movement": 2,
+		"strength": 100,
+		"cost": 5,
+		"uniques": [
+			"[10]% maintenance costs",
+			// "Cannot move <within [positiveAmount] tiles of a [tileFilter]>",
+			"Remove [All] improvements from this tile <upon turn end>",
+			"Transfer Movement to [fire]",
+			// "[-100] Strength <in tiles without [Vegetation]> <upon turn end>",
+			"Heals [30] damage if it kills a unit",
+			"Cannot embark",
+			"Unbuildable",
+			"Uncapturable",
+			"Cannot be purchased",
+		],
+		"promotions": ["Burning"],
+		"attackSound": "nonmetalhit"
+	},
+	{
+		"name": "Scout",
+		"unitType": "Scout",
+		"movement": 20,
+		"strength": 15,
+		"cost": 25,
+		"obsoleteTech": "Future Tech",
+		"uniques": [
+			"Never appears as a Barbarian unit",
+		],
+		"promotions": ["Ignore terrain cost","Pyro"],
+		"attackSound": "nonmetalhit"
+	},
+
+]

@@ -1,0 +1,51 @@
+[
+
+	{
+		"name": "Burning",
+		"unitTypes": [
+			"elemental",
+		],
+		"prerequisites": [],
+		"uniques": [
+			"This Promotion is free",
+			// "Can instantly construct a [blaze] improvement <in [Quarry] tiles> <by consuming this unit>",
+			"Can instantly construct a [blaze] improvement <in [Resource] tiles> <for all movement>",
+			"All adjacent units heal [-75] HP when healing",  // damage?
+			// "Remove [All] improvements from this tile <upon entering a [Improvement] tile>",  // works
+			"Remove [All] improvements from this tile <upon turn end>",  // works
+			"Turn this tile into a [Fallout] tile <upon turn end>",
+			"[1] free [fire] units appear <upon entering a [Land] tile>",
+		],
+		"row": 1,
+		"column": 30,
+	},
+	{
+		"name": "Spreading",
+		"unitTypes": [
+			"elemental",
+		],
+		"prerequisites": [],
+		"uniques": [
+			"This Promotion is free",
+			"[2] free [fire] units appear <upon ending a turn in a [Vegetation] tile>",
+			"[1] free [fire] units appear <upon entering combat>",
+			"[1] free [fire] units appear <when defeated> <in [Vegetation] tiles>",
+		],
+		"row": 1,
+		"column": 31,
+	},
+	{
+		"name": "Pyro",
+		"unitTypes": [
+			"Scout",
+		],
+		"prerequisites": [],
+		"uniques": [
+			"This Promotion is free",
+			"[1] free [fire] units appear <in [Vegetation] tiles> <for all movement>",
+			"[1] free [fire] units appear <in [Improvement] tiles> <for all movement>",
+		],
+		"row": 1,
+		"column": 32,
+	}
+]

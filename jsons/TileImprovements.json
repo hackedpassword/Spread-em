@@ -1,0 +1,35 @@
+[
+
+	{
+		"name": "blaze",
+		"terrainsCanBeBuiltOn": ["Forest","Fallout"],
+		"turnsToBuild": 1,
+		"techRequired": "Pottery",
+		"uniques": [
+			//"Available <in [Vegetation] tiles>",
+			"Available <in [Improvement] tiles>",
+			//"Removes removable features when built",
+			"Remove [All] resources from this tile",
+			"Can be built outside your borders",
+			"Adjacent enemy units ending their turn take [75] damage",
+			"Destroyed when pillaged",
+			"[3] free [fire] units appear",
+			"Units ending their turn on this terrain take [75] damage",
+			"Nullifies all other stats this tile provides",
+			"Has an elevation of [1] for visibility calculations",
+			"Gives a defensive bonus of [-100]%",
+			"Turn this tile into a [Fallout] tile",
+			"Turn this tile into a [Desert] tile",
+			"Remove [blaze] improvements from this tile <upon turn start>",
+			// + remove forest?
+		],
+	},
+	{
+		"name": "Remove blaze",
+		"turnsToBuild": 1,
+		"uniques": ["Can be built outside your borders", "Excluded from map editor"],
+	        "civilopediaText": [{"text":"Firefighting is not for the weak!"}],
+	}
+
+
+]

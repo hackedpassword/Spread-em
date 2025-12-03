@@ -1,0 +1,14 @@
+[
+
+	{
+		"name": "elemental",
+		"movementType": "Land",
+		"uniques": [
+			"Destroys tile improvements when attacking",
+			"Self-destructs when attacking",
+		]
+	},
+
+
+
+]
