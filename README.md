@@ -17,6 +17,9 @@ You might want to:
 - either change Fire upkeep costs to zero or set Debug -> Supercharged
 - set maximum vegetation and biome in random maps
 
+![](preview.png)
+
+
 Comment in the issues section.
 
  -> ⭐ <-
