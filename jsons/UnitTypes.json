@@ -1,7 +1,7 @@
 [
 
 	{
-		"name": "elemental",
+		"name": "Elemental",
 		"movementType": "Land",
 		"uniques": [
 			"Destroys tile improvements when attacking",

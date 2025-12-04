@@ -1,20 +1,28 @@
 [
-
 	{
 		"name": "Burning",
 		"unitTypes": [
-			"elemental",
+			"Elemental",
 		],
 		"prerequisites": [],
 		"uniques": [
+		// note the terrain conversions here would be better using custom terrains that won't risk any undesired land swapping
 			"This Promotion is free",
-			// "Can instantly construct a [blaze] improvement <in [Quarry] tiles> <by consuming this unit>",
-			"Can instantly construct a [blaze] improvement <in [Resource] tiles> <for all movement>",
-			"All adjacent units heal [-75] HP when healing",  // damage?
-			// "Remove [All] improvements from this tile <upon entering a [Improvement] tile>",  // works
-			"Remove [All] improvements from this tile <upon turn end>",  // works
-			"Turn this tile into a [Fallout] tile <upon turn end>",
-			"[1] free [fire] units appear <upon entering a [Land] tile>",
+			"Remove [All] improvements from this tile <upon entering a [Improvement] tile> <when above [70] HP>",
+			"Remove [All] improvements from this tile <upon turn end> <in [Fallout] tiles>",  // timing, first time through won't trigger
+			"Turn this tile into a [Desert] tile <upon turn end> <in [Fallout] tiles> <with [20]% chance>", // Mountain is a good alt option, way more _intolerant_ to build layers, blasts units though
+			"Turn this tile into a [Plains] tile <upon turn end> <in [Desert] tiles>", // hack: strip vegetation terrainfeatures w/ desert, flip to plains (vegetation is not a terrains.json entity, cannot remove as such)
+			"Turn this tile into a [Fallout] tile <upon turn start> <with [25]% chance>", // do this conversion last, triggered first, for rolling terrain changes from [current]+fallout -> desert
+			"[This Unit] is destroyed <upon turn end> <in [non-[Forest]] tiles> <when below [20] HP>",
+			"[This Unit] is destroyed <upon turn end> <in [{Plains} {Fallout}] tiles> <when below [40] HP>",
+			"[This Unit] takes [20] damage <upon turn end> <in [Fallout] tiles>",
+			"[This Unit] heals [5] HP <upon turn start> <in [Forest] tiles>",
+			"[This Unit] heals [5] HP <upon turn start> <in [Forest] tiles> <when adjacent to a [Fire] unit>",
+			"[This Unit] takes [15] damage <upon turn end> <in [non-[Forest]] tiles>",
+			"[This Unit] loses the [Spreading] promotion <upon turn end> <in [{unimproved} {non-[Forest]}] tiles> <with [5] to [6] neighboring [non-[Forest]] tiles>",
+			//"[This Unit] loses the [Spreading] promotion <upon turn end> <with [5] to [6] neighboring [non-[Forest]] tiles>",
+			"[1] free [Fire] units appear <upon turn end> <for units without [Spreading]> <in [Plains] tiles>", // re-ignite! the firestarter
+			"[This Unit] gains the [Spreading] promotion <upon turn start> <for units without [Spreading]> <in [Forest] tiles>",
 		],
 		"row": 1,
 		"column": 30,
@@ -22,14 +30,25 @@
 	{
 		"name": "Spreading",
 		"unitTypes": [
-			"elemental",
+			"Elemental",
 		],
 		"prerequisites": [],
 		"uniques": [
 			"This Promotion is free",
-			"[2] free [fire] units appear <upon ending a turn in a [Vegetation] tile>",
-			"[1] free [fire] units appear <upon entering combat>",
-			"[1] free [fire] units appear <when defeated> <in [Vegetation] tiles>",
+			"[1] free [Fire] units appear <upon entering a [Forest] tile>",
+			"[2] free [Fire] units appear <upon turn start> <in tiles adjacent to [Blaze] tiles>",
+			"Turn this tile into a [Fallout] tile <upon turn start> <in tiles adjacent to [Blaze] tiles>",
+			"[1] free [Fire] units appear <upon turn start> <when above [50] HP> <in tiles adjacent to [Fallout] tiles>", // performance ordering
+			"[1] free [Fire] units appear <upon turn start> <in [Fallout] tiles> <when above [30] HP>",
+			"[1] free [Fire] units appear <upon turn start> <in [Improvement] tiles> <when above [50] HP>",
+			"[1] free [Fire] units appear <upon turn start> <in [Forest] tiles> <when above [50] HP>",
+			"[1] free [Fire] units appear <upon turn start> <in [Jungle] tiles> <when above [50] HP>",
+			//"[1] free [Fire] units appear <upon turn start> <when adjacent to a [Fire] unit> <when above [50] HP>",
+			"[1] free [Fire] units appear <upon entering combat> <when above [50] HP>",
+			"[2] free [Fire] units appear <upon being defeated> <in [Forest] tiles> <when above [50] HP>",
+			"[This Unit] takes [20] damage <upon turn end> <with [1] to [1] neighboring [Fallout] tiles>",
+			"[This Unit] takes [15] damage <upon turn end> <with [2] to [2] neighboring [Fallout] tiles>",
+			"[This Unit] takes [10] damage <upon turn end> <with [3] to [6] neighboring [Fallout] tiles>",
 		],
 		"row": 1,
 		"column": 31,
@@ -42,10 +61,11 @@
 		"prerequisites": [],
 		"uniques": [
 			"This Promotion is free",
-			"[1] free [fire] units appear <in [Vegetation] tiles> <for all movement>",
-			"[1] free [fire] units appear <in [Improvement] tiles> <for all movement>",
+			"[1] free [Fire] units appear <with [1] to [6] neighboring [Rough terrain] tiles> <for all movement>",
+			"[1] free [Fire] units appear <with [1] to [6] neighboring [Improvement] tiles> <for all movement>",
 		],
 		"row": 1,
 		"column": 32,
-	}
+	},
+
 ]

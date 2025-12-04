@@ -1,35 +1,40 @@
 [
 
 	{
-		"name": "blaze",
-		"terrainsCanBeBuiltOn": ["Forest","Fallout"],
+		"name": "Blaze",
+		"terrainsCanBeBuiltOn": ["Land"],
 		"turnsToBuild": 1,
-		"techRequired": "Pottery",
+		"techRequired": "Agriculture",
 		"uniques": [
-			//"Available <in [Vegetation] tiles>",
-			"Available <in [Improvement] tiles>",
-			//"Removes removable features when built",
-			"Remove [All] resources from this tile",
 			"Can be built outside your borders",
-			"Adjacent enemy units ending their turn take [75] damage",
 			"Destroyed when pillaged",
-			"[3] free [fire] units appear",
-			"Units ending their turn on this terrain take [75] damage",
-			"Nullifies all other stats this tile provides",
-			"Has an elevation of [1] for visibility calculations",
+			"Removes removable features when built",
+			"Remove [All] resources from this tile <in [Plains] tiles>",
+			"Adjacent enemy units ending their turn take [75] damage",
+			"[3] free [Fire] units appear",
 			"Gives a defensive bonus of [-100]%",
-			"Turn this tile into a [Fallout] tile",
-			"Turn this tile into a [Desert] tile",
-			"Remove [blaze] improvements from this tile <upon turn start>",
-			// + remove forest?
+			"Turn this tile into a [Fallout] tile <in [Plains] tiles>", // won't work because the improvement uniques are not re-parsed
+			"Turn this tile into a [Plains] tile", // remove terrainfeature cheat
+
+		// test tubes that melted
+			//"Remove [Blaze] improvements from this tile <upon turn end>", // does not respect triggerables _after_ improvement is built
+			//"[2] free [Fire] units appear <upon turn end>", // supposed to churn out Fire units
+			//"Gain control over [Land] tiles in a [0]-tile radius", // this unique ends parsing on this improvement, must be last
+			//"Remove [Blaze] improvements from this tile", // this works, will self destruct immediately
+		// checker says no? solution is to create a Scorched terrainfeature like Fallout, trigger terrain-based uniques there
+			//"Nullifies all other stats this tile provides",
+			//"Has an elevation of [1] for visibility calculations",
 		],
 	},
 	{
-		"name": "Remove blaze",
+		"name": "Remove Blaze",
+		"terrainsCanBeBuiltOn": ["Land"],
 		"turnsToBuild": 1,
-		"uniques": ["Can be built outside your borders", "Excluded from map editor"],
+		"techRequired": "Agriculture",
+		"uniques": [
+			"Can be built outside your borders",
+			"Excluded from map editor",
+		],
 	        "civilopediaText": [{"text":"Firefighting is not for the weak!"}],
-	}
-
-
+	},
 ]

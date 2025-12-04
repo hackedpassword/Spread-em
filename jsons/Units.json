@@ -1,25 +1,33 @@
 [
 
 	{
-		"name": "fire",
-		"unitType": "elemental",
+		"name": "Fire",
+		"unitType": "Elemental",
 		// "uniqueTo": "Barbarians",
-		"movement": 2,
+		"movement": 1,
 		"strength": 100,
 		"cost": 5,
 		"uniques": [
 			"[10]% maintenance costs",
-			// "Cannot move <within [positiveAmount] tiles of a [tileFilter]>",
-			"Remove [All] improvements from this tile <upon turn end>",
-			"Transfer Movement to [fire]",
-			// "[-100] Strength <in tiles without [Vegetation]> <upon turn end>",
+			//"Cannot move",
+			"Automation is a primary action",
+			//"Remove [All] improvements from this tile <upon turn end>",
+			"[-50] Strength <in tiles without [Vegetation]>",
+			"Transfer Movement to [Fire]",
 			"Heals [30] damage if it kills a unit",
+			"No movement cost to pillage", "Can only heal by pillaging",
+			//"Can instantly construct a [Remove Fallout] improvement <upon turn start>", // force a removal? prob not
+			"Can instantly construct a [Remove Fallout] improvement <by consuming this unit>",
+			"Can instantly construct a [Blaze] improvement <in [Strategic resource] tiles> <by consuming this unit>",
+			"Can instantly construct a [Blaze] improvement <in [Luxury resource] tiles> <by consuming this unit>",
+			"Can instantly construct a [Blaze] improvement <in [Bonus resource] tiles> <by consuming this unit>",
+			"[This Unit] is destroyed <by consuming this unit>",
 			"Cannot embark",
 			"Unbuildable",
 			"Uncapturable",
 			"Cannot be purchased",
 		],
-		"promotions": ["Burning"],
+		"promotions": ["Burning","Spreading"],
 		"attackSound": "nonmetalhit"
 	},
 	{
@@ -31,9 +39,9 @@
 		"obsoleteTech": "Future Tech",
 		"uniques": [
 			"Never appears as a Barbarian unit",
+			"Can build [Remove Blaze] improvements on tiles",
 		],
 		"promotions": ["Ignore terrain cost","Pyro"],
 		"attackSound": "nonmetalhit"
 	},
-
 ]

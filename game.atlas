@@ -4,14 +4,14 @@ size: 128, 64
 format: RGBA8888
 filter: MipMapLinearLinear, MipMapLinearLinear
 repeat: none
-TileSets/FantasyHex/Units/fire
+TileSets/FantasyHex/Units/Fire
   rotate: false
   xy: 60, 4
   size: 48, 48
   orig: 48, 48
   offset: 0, 0
   index: -1
-TileSets/HexaRealm/Tiles/blaze
+TileSets/HexaRealm/Tiles/Blaze
   rotate: false
   xy: 4, 4
   size: 48, 48
