@@ -12,6 +12,7 @@
 			//"Cannot move",
 			"Automation is a primary action",
 			//"Remove [All] improvements from this tile <upon turn end>",
+  "May enter foreign tiles without open borders",
 			"[-50] Strength <in tiles without [Vegetation]>",
 			"Transfer Movement to [Fire]",
 			"Heals [30] damage if it kills a unit",
